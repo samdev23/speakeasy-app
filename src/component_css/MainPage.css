@@ -1,0 +1,129 @@
+.main {
+    background-color: #8e44ad;
+    background: linear-gradient(to right, #8e44ad, #d35400);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 65%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+        flex: 1;
+        background-color:aliceblue;
+
+        .logocontainer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            height: 50px;
+            padding: 10px;
+            color: white;
+
+            .logo {
+                font-weight: bold;
+            }
+
+            button {
+                background-color:green;
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                border: none;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+        }
+
+        .user {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                background-color: grey;
+            }
+        }
+    }
+
+    .chat{
+        flex: 2;
+
+        .topbar {
+            height: 70px;
+            background-color: black;
+        }
+
+        .chatbubbles {
+            background-color: whitesmoke;
+            padding: 10px;
+            height: calc(100% - 150px);
+            overflow: scroll;
+
+            .chatbubble {
+                display: flex;
+                margin-bottom: 20px;
+
+                .msgcontent {
+                    display: flex;
+                    max-width: 80%;
+                    flex-direction: column;
+                    gap: 10px;
+                    color: white;
+                    background: linear-gradient(to right, palevioletred, #8A2BE2);
+                    padding: 10px;
+                    border-radius: 0px 10px 10px 0px;
+                    cursor: pointer;
+                }
+
+                &.system {
+                    .msgcontent {
+                        font-style: italic;
+                    }
+                }
+            
+                &.owner {
+                    flex-direction: row-reverse;
+
+                    .msgcontent {
+                        background: linear-gradient(to left, palevioletred, #d35400);
+                        border-radius: 10px 0px 0px 10px;
+                    }
+                    
+                }
+            }
+        }
+
+        .inputbar {
+            height: 50px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 18px;
+            }
+
+            button {
+                border: none;
+                padding: 10px 15px;
+                color: white;
+                background-color: grey;
+                cursor: pointer;
+            }
+        }
+    }
+}
