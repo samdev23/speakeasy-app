@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ChatBubble = () => {
+const ChatBubble = ({message}) => {
     return (
         <div className='chatbubble'>
-            <div className='msgcontent'>Example Text</div>
+            <div className='msgcontent'>{message}</div>
         </div>
     )
 }

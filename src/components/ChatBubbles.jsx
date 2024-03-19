@@ -1,12 +1,10 @@
 import React from 'react'
 import ChatBubble from './ChatBubble';
 
-const ChatBubbles = () => {
+const ChatBubbles = ({chatRows}) => {
     return (
         <div className='chatbubbles'>
-            <ChatBubble/>
-            <ChatBubble/>
-            <ChatBubble/>
+            {chatRows.map((chatRow, index) => <ChatBubble key = {index} message={chatRow} />)}
         </div>
     )
 }
