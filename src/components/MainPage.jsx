@@ -1,5 +1,5 @@
 import React from 'react';
-import '../component_css/MainPage.css';
+import '../component_css/MainPage.scss';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
 
@@ -10,7 +10,7 @@ const MainPage = (props) => {
         chatRows,
         onPublicMessage,
         onConnect,
-        onDisconnect
+        onDisconnect,
       } = props;
 
     return (
