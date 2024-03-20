@@ -1,0 +1,67 @@
+.landing-main {
+    background-color: #8e44ad;
+    background: linear-gradient(to right, #8e44ad, #d35400);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-container {
+    width: 30%;
+    height: 55%;
+    display: flex;
+    overflow: hidden;
+    
+    .landing-input {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 0 auto;
+        padding: 1.0rem 1.5rem;
+        border-radius: 0.2rem;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        width: 80%;
+        display: block;
+        outline: none;
+        margin-bottom: 30px;
+      }
+
+    .landing-form {
+        width: 400px;
+
+        .landing-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            width: 100%;
+            font-size: 2.3em;
+        }
+
+        .landing-submit {
+            border-radius: 4px;
+            border: none;
+            background-color: white;
+            color: black;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 22px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.4s;
+            cursor: pointer;
+            margin: 5px;
+            width: 90%;
+
+            &:hover {
+                background-color: lightgreen; 
+                transform: translateY(-2px); 
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            }
+
+            &:active {
+                background-color: darkgreen;
+            }
+        }
+    }
+}

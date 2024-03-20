@@ -1,7 +1,7 @@
 import React from 'react';
 import '../component_css/MainPage.scss';
-import Sidebar from './Sidebar';
-import Chat from './Chat';
+import Sidebar from './sidebar_components/Sidebar';
+import Chat from './chat_components/Chat';
 
 const MainPage = (props) => {
     const {
@@ -9,7 +9,6 @@ const MainPage = (props) => {
         users,
         chatRows,
         onPublicMessage,
-        onConnect,
         onDisconnect,
       } = props;
 
@@ -19,7 +18,6 @@ const MainPage = (props) => {
                 <Sidebar 
                     isConnected={isConnected} 
                     users={users}
-                    onConnect = {onConnect}
                     onDisconnect = {onDisconnect}/>
                 <Chat 
                     isConnected={isConnected}

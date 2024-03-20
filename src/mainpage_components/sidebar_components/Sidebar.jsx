@@ -6,7 +6,6 @@ const Sidebar = (props) => {
     const {
         isConnected,
         users,
-        onConnect,
         onDisconnect,
       } = props;
 
@@ -14,7 +13,6 @@ const Sidebar = (props) => {
         <div className='sidebar'>
             <Logo 
                 isConnected={isConnected}
-                onConnect = {onConnect}
                 onDisconnect = {onDisconnect}/>
             {users.map((user, index) => <User key = {index} name={user} />)}
         </div>

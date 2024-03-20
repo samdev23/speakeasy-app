@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useCallback, useRef}  from 'react';
-import MainPage from "./components/MainPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./mainpage_components/MainPage";
+import LandingPage from "./landpage_components/LandingPage.jsx";
 
 const URL = "wss://qx2ley4a6d.execute-api.us-east-2.amazonaws.com/production/";
 
@@ -9,15 +11,15 @@ function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [users, setUsers] = useState([]);
   const [chatRows, setChatRows] = useState([]);
+  const [name, setName] = useState('');
 
   const onSocketOpen = useCallback (() => {
     setIsConnected(true);
-    const name = prompt('Please enter your name');
     socket.current?.send(JSON.stringify({
       action: 'setUsername',
       name,
     }));
-  }, []);
+  }, [name]);
 
   const onSocketClose = useCallback (() => {
     setIsConnected(false);
@@ -45,7 +47,7 @@ function App() {
         onSocketMessage(event.data);
       });
     }
-  }, []);
+  }, [onSocketOpen]);
 
   useEffect(() => {
     return () => {
@@ -67,15 +69,31 @@ function App() {
   }, [isConnected])
 
   return (
-    <MainPage
-      isConnected={isConnected}
-      users={users}
-      chatRows={chatRows}
-      onPublicMessage={onSendPublicMsg}
-      onConnect={onConnect}
-      onDisconnect={onDisconnect}
-    />
-  );
+    <BrowserRouter>
+        <Routes>
+
+          <Route path="/"
+                element = { 
+                <LandingPage
+                  isConnected={isConnected}
+                  setName = {setName}
+                  onConnect={onConnect}/> 
+                }>
+          </Route>
+
+          <Route path="/chat"
+              element = {<MainPage
+                        isConnected={isConnected}
+                        users={users}
+                        chatRows={chatRows}
+                        onPublicMessage={onSendPublicMsg}
+                        onDisconnect={onDisconnect}
+                        />}>
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
+  )
 }
 
 export default App;
