@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from '../sidebar_components/TopBar';
+import TopBar from './TopBar';
 import ChatBubbles from './ChatBubbles';
 import InputBar from './InputBar';
 
