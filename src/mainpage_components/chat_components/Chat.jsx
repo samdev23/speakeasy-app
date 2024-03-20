@@ -6,6 +6,7 @@ import InputBar from './InputBar';
 const Chat = (props) => {
     const {
         isConnected,
+        onDisconnect,
         chatRows,
         onPublicMessage,
       } = props;
@@ -13,7 +14,9 @@ const Chat = (props) => {
     return (
         
         <div className='chat'>
-            <TopBar/>
+            <TopBar 
+                onDisconnect = {onDisconnect}
+                isConnected = {isConnected}/>
             <ChatBubbles chatRows = {chatRows}/>
             <InputBar 
             onPublicMessage = {onPublicMessage}

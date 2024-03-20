@@ -4,16 +4,12 @@ import Logo from './Logo';
 
 const Sidebar = (props) => {
     const {
-        isConnected,
         users,
-        onDisconnect,
       } = props;
 
     return (
         <div className='sidebar'>
-            <Logo 
-                isConnected={isConnected}
-                onDisconnect = {onDisconnect}/>
+            <Logo/>
             {users.map((user, index) => <User key = {index} name={user} />)}
         </div>
     )

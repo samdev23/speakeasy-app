@@ -22,7 +22,6 @@
         .logocontainer{
             display: flex;
             align-items: center;
-            justify-content: space-between;
             background-color: black;
             height: 50px;
             padding: 10px;
@@ -32,22 +31,6 @@
                 font-weight: bold;
             }
 
-            .con-btn {
-                width: 20px;
-                height: 20px;
-                font-size: 10px;
-                border: none;
-                cursor: pointer;
-                border-radius: 50%;
-
-                &.connected {
-                    background-color:green;
-                }
-
-                &.disconnected {
-                    background-color:darkred;
-                }
-            }
         }
 
         .user {
@@ -66,7 +49,28 @@
 
         .topbar {
             height: 70px;
+            display: flex;
+            align-items: center;
             background-color: black;
+            padding-right: 20px;
+
+            .con-btn {
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                border: none;
+                cursor: pointer;
+                border-radius: 50%;
+                margin-left: auto;
+
+                &.connected {
+                    background-color:green;
+                }
+
+                &.disconnected {
+                    background-color:darkred;
+                }
+            }
         }
 
         .chatbubbles {

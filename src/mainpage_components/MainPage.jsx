@@ -16,11 +16,10 @@ const MainPage = (props) => {
         <div className='main'>
             <div className="container">
                 <Sidebar 
-                    isConnected={isConnected} 
-                    users={users}
-                    onDisconnect = {onDisconnect}/>
+                    users={users}/>
                 <Chat 
                     isConnected={isConnected}
+                    onDisconnect = {onDisconnect}
                     chatRows={chatRows}
                     onPublicMessage={onPublicMessage} 
                 />
