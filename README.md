@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Speakeasy Websocket Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the react frontend to an overall web socket application. It allows users to connect to a WebSocket server and chat with each other in real-time. This application uses an AWS API websocket gateway with routes implemented by a lambda function to do the websocket server logic. You can find that code here: https://github.com/samdev23/speakeasy-lambda-api-handler. 
 
-## Available Scripts
+Below, you'll find instructions on how to set up and run this react application.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage](#usage)
+  - [Landing Page](#landing-page)
+  - [Chat Page](#chat-page)
+- [Features](#features)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure you have the following installed on your machine:
 
-### `npm test`
+- Node.js
+- npm (Node Package Manager)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone this repository to your local machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   `git clone https://github.com/samdev23/speakeasy-app`
+   
+2. Navigate to the project directory.
+   
+   `cd speakeasy-app`
+   
+3. Install dependencies using npm.
+   
+   `npm install`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the Application
+  - Run the following command to start the development server:
+      `npm start`
+    
+  - The application will be available at http://localhost:3000 in your web browser.
+  - Alternatively you can assess the deployed version of this app at: http://speakeasy-webpage.s3-website.us-east-2.amazonaws.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
+### Landing Page
 
-### `npm run eject`
+  - When you visit the landing page (/), you can set your username and connect to the chat server.
+  - Enter your desired username and click on the "Connect" button. Once connected, you will be redirected to the chat page (/chat).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Chat Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- On the chat page, you can see the list of users currently online and the chat messages.
+- Type your message in the input box at the bottom and press Enter to send a public message to all users.
+- To disconnect from the chat server, click on the "Disconnect" button which is the green button on the top right
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features
+  - Real-time communication via WebSocket.
+  - Public messaging: Users can send messages visible to all connected users.
+  - User presence: List of users currently online is displayed.
+  - Simple and intuitive user interface.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contact
+Samuel Johnson - samj944@gmail.com  
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
